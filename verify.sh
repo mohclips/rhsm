@@ -3,17 +3,19 @@
 # https://access.redhat.com/articles/3626371#comment-1622371
 
 # Subscriptions to check
-SUBS=(6292824 6507358)
+SUBS=(6507358 7714792)
 
 RHN_ACCOUNT=5573408
 
-WHITELIST=(del-boy.localdomain Golden-AMI test-from-image mgmt2.test.mcwm.local testclient2.test.local npd02lvmgmvc01.mcwm.local)
+WHITELIST=(del-boy.localdomain Golden-AMI test-from-image mgmt2.test.mcwm.local testclient2.test.local)
 #WHITELIST=(Golden-AMI test-from-image)
 
 EMAIL_TO=nicholas.cross@uk.fujitsu.com
 
 # get a token here
 # https://access.redhat.com/management/api
+SCRIPT_PATH="$( cd "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
+cd $SCRIPT_PATH
 . ./offline_token.sh
 
 function jsonValue() {
